@@ -1,5 +1,5 @@
 import prisma from "../database.js";
-import { CreateUserData } from "../services/authService.js";
+import { CreateUserData } from "../types/user.js";
 
 export function checkEmail(email:string) {
     return prisma.user.findUnique({where:{email}})

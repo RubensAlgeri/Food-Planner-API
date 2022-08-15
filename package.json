@@ -10,11 +10,8 @@
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc",
     "start": "node dist/server.js",
-    "dev": "nodemon server.ts",
+    "dev": "nodemon src/server.ts",
     "test": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -- --coverage -i"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   },
   "keywords": [],
   "author": "",
