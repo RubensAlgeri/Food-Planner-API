@@ -1,3 +1,9 @@
+/node_modules
+.env
+.env.test
+/tests
+README.md
+
 # Logs
 logs
 *.log
