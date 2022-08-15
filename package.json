@@ -9,9 +9,12 @@
   },
   "scripts": {
     "build": "./node_modules/typescript/bin/tsc",
-    "start": "node dist/server.js",
+    "start": "npx prismage migrate deploy && node dist/server.js",
     "dev": "nodemon src/server.ts",
-    "test": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -- --coverage -i"
+    "dev:test": "dotenv -e .env.test nodemon src/server.ts",
+    "test": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -- --coverage -i",
+    "test:integration": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -- -i --coverage --testPathPattern=tests/integration",
+    "test:unit": "dotenv -e .env.test prisma migrate dev && NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -- -i --coverage --testPathPattern=tests/unit"
   },
   "keywords": [],
   "author": "",

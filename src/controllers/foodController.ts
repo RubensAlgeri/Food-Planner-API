@@ -16,3 +16,8 @@ export async function calculateBasalMetabolicRate(req:Request, res:Response) {
     // Extremamente ativo (exercício pesado diariamente e até 2 vezes por dia) fator = 1.9
 
 }
+
+export async function resetDatabase(req: Request, res: Response) {
+    await foodService.deleteDatabase();
+    res.sendStatus(200)
+}
